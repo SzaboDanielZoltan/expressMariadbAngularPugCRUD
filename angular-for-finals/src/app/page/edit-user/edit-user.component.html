@@ -1,0 +1,44 @@
+<div class="col-4 offset-4">
+  <h1>Edit User</h1>
+  <form (submit)="onSubmit($event)"
+        action="">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input name="id"
+             id="id"
+             [(ngModel)]="user.id"
+             type="number"
+             class="form-control"
+             disabled>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input name="name"
+             id="name"
+             [(ngModel)]="user.name"
+             type="text"
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input name="email"
+             id="email"
+             [(ngModel)]="user.email"
+             type="text"
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <select name="title"
+              id="title"
+              class="form-control"
+              [(ngModel)]="user.title">
+        <option *ngFor="let title of titles"
+                value="{{title.id}}">{{title.title}}</option>
+      </select>
+    </div>
+    <button class="btn btn-primary">Edit</button>
+    <button class="btn btn-danger"
+            routerLink="/users">Cancel</button>
+  </form>
+</div>

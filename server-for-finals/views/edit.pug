@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    .row.text-center
+      .col
+        h1 Edit title name
+    .row
+      .col-4.offset-4
+        form(action=`/titles/edit/${title.id}` method="post")
+          .form-group
+            label(for="title") Title name
+            input.form-control(name="title" id="title" type="text" value=`${title.title}`)
+          button.btn.btn-primary Update
+          a.btn.btn-danger(href="/titles") Cancel

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container
+    .row.text-center
+      .col
+        h1 #{title}:
+    .row
+      .col
+        table.table.table-striped
+          thead.thead-dark
+            tr
+              th id
+              th name
+              th email
+              th title
+          tbody
+            each user in users
+              tr
+                td #{user.id}
+                td #{user.name}
+                td #{user.email}
+                td #{user.title}

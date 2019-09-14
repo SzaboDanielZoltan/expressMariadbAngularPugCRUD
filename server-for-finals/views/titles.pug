@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container
+    .row.text-center
+      .col
+        h1 #{title}:
+    .row
+      .col-4.offset-4
+        table.table.table-striped
+          thead.thead-dark
+            tr
+              th ID
+              th Title
+              th
+                a.btn.btn-warning.btn-block(href="/titles/create") Add new
+          tbody
+            each title in titles
+              tr
+                td #{title.id}
+                td #{title.title}
+                td
+                  .btn-group.btn-block
+                    a.btn.btn-primary(href=`/titles/edit/${title.id}`) Rename
+                    a.btn.btn-danger(href=`/titles/delete/${title.id}`) Delete
